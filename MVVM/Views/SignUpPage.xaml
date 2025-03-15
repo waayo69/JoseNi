@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JoseNi.MVVM.Views.SignUpPage"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False"
+             Title="SignUpPage">
+    <VerticalStackLayout>
+        <VerticalStackLayout>
+            <Image Source="logo.png" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0"/>
+            
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="    Under" FontSize="32" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="AntiqueWhite" Margin="0,0,70,0"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Sec" FontSize="32" HorizontalOptions="Center" TextColor="Gray" Margin="50,0,0,0"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Padding="50" Spacing="0">
+                <Entry x:Name="Fname" Placeholder="First Name" Margin="0,0,0,0"/>
+                <Entry x:Name="Lname" Placeholder="Last Name"/>
+                <Entry x:Name="regEmail" Placeholder="Email"/>
+                <Entry x:Name="regUserName" Placeholder="Username"/>
+
+                <Button x:Name="btnCreateAcc" Clicked="btnCreateAcc_Clicked" Text="Register" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

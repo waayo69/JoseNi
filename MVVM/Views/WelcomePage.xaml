@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JoseNi.MVVM.Views.WelcomePage"
+             Title="WelcomePage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+    <VerticalStackLayout>
+        <Image Source="logo.png" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0"/>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="    Under" FontSize="32" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="AntiqueWhite" Margin="0,0,70,0"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="Sec" FontSize="32" HorizontalOptions="Center" TextColor="Gray" Margin="50,0,0,0"/>
+        </HorizontalStackLayout>
+        <VerticalStackLayout Padding="50" Spacing="15">
+            <Label Text="Please login or register to continue." FontSize="16" HorizontalOptions="Center" TextColor="Gray" Margin="0,200,0,0"/>
+            <Button x:Name="btnLogin" Clicked="btnLogin_Clicked" Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black"/>
+            <Button x:Name="btnSignUp" Clicked="btnSignUp_Clicked" Text="Sign Up" BackgroundColor="AntiqueWhite" TextColor="Black"/>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>
