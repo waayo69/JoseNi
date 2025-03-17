@@ -57,6 +57,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiAsset Remove="Resources\Raw\AboutAssets.txt" />
+	  <MauiAsset Remove="Resources\Raw\splash.mp4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\Raw\AboutAssets.txt" />
+	  <Content Include="Resources\Raw\splash.mp4">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />

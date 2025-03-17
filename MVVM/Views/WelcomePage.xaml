@@ -13,6 +13,24 @@
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="Sec" FontSize="32" HorizontalOptions="Center" TextColor="Gray" Margin="50,0,0,0"/>
         </HorizontalStackLayout>
+        
+        <CarouselView x:Name="Cview" Loop="True" >
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>No Filters</x:String>
+                    <x:String>No Censorship</x:String>
+                    <x:String>Just Pure Internet Culture</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding}" FontSize="24" HorizontalOptions="Center" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        
         <VerticalStackLayout Padding="50" Spacing="15">
             <Label Text="Please login or register to continue." FontSize="16" HorizontalOptions="Center" TextColor="Gray" Margin="0,200,0,0"/>
             <Button x:Name="btnLogin" Clicked="btnLogin_Clicked" Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black"/>
