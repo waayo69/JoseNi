@@ -58,10 +58,16 @@
 
 	<ItemGroup>
 	  <MauiAsset Remove="Resources\Raw\qqqq.mp4" />
+	  <MauiAsset Remove="Resources\Raw\splash.mp4" />
+	  <MauiAsset Remove="Resources\Raw\splashh.mp4" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidAsset Include="Resources\Raw\qqqq.mp4" />
+	  <EmbeddedResource Include="Resources\Raw\qqqq.mp4" />
+	  <EmbeddedResource Include="Resources\Raw\splash.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Raw\splashh.mp4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -74,12 +80,6 @@
 
 	<ItemGroup>
 	  <Folder Include="MVVM\Models\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\splash.mp4">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>

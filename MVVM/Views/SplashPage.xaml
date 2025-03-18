@@ -7,9 +7,10 @@
              Shell.NavBarIsVisible="False"
              x:Class="JoseNi.MVVM.Views.SplashPage"
              Title="SplashPage">
+
     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
         <toolkit:MediaElement VerticalOptions="Center" HorizontalOptions="Center" 
-                              Source="C:\Users\Dream\Source\Repos\JoseNi\Resources\Raw\splash.mp4"
+                              Source="c:\users\act-student\source\repos\joseni\resources\raw\splashh.mp4"
                 x:Name="SplashVideo"
                 
                     ShouldAutoPlay="True"

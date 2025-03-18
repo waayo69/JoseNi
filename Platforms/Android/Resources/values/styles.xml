@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<style name ="splasha" parent="Maui.SplashTheme">
+		<item name="android:windowIsTranslucent">True</item>
+		<item name="android:windowSplashScreenAnimationDuration">0</item>                                  
+	</style>
+	
+</resources>
