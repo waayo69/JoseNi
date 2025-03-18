@@ -6,33 +6,47 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="Black">
     <VerticalStackLayout>
-        <Image Source="logo.png" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0"/>
+        <Image x:Name="imgLoader"
+               Source="cube.gif"
+               HeightRequest="150" 
+               WidthRequest="150"
+               HorizontalOptions="Center"
+               IsAnimationPlaying="True"/>
+        <Image Source="cube.gif" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0" IsAnimationPlaying="True"/>
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="    Under" FontSize="32" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="AntiqueWhite" Margin="0,0,70,0"/>
         </HorizontalStackLayout>
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="Sec" FontSize="32" HorizontalOptions="Center" TextColor="Gray" Margin="50,0,0,0"/>
         </HorizontalStackLayout>
-        
-        <CarouselView x:Name="Cview" Loop="True" >
-            <CarouselView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>No Filters</x:String>
-                    <x:String>No Censorship</x:String>
-                    <x:String>Just Pure Internet Culture</x:String>
-                </x:Array>
-            </CarouselView.ItemsSource>
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <VerticalStackLayout>
-                        <Label Text="{Binding}" FontSize="24" HorizontalOptions="Center" TextColor="Gray"/>
-                    </VerticalStackLayout>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
-        
+
+        <Grid Margin="0,70,0,0">
+            <CarouselView x:Name="marqueeCarousel"
+                      HeightRequest="50"
+                      WidthRequest="400"
+                      IndicatorView="{x:Null}"
+                      ItemsSource="{Binding Items}"
+                      BackgroundColor="Black"
+                      HorizontalScrollBarVisibility="Never">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                                   ItemSpacing="10"
+                                   SnapPointsType="None" />
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding}"
+                           FontSize="24"
+                           TextColor="White"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </Grid>
+
         <VerticalStackLayout Padding="50" Spacing="15">
-            <Label Text="Please login or register to continue." FontSize="16" HorizontalOptions="Center" TextColor="Gray" Margin="0,200,0,0"/>
+            <Label Text="Please login or register to continue." FontSize="16" HorizontalOptions="Center" TextColor="Gray" Margin="0,50,0,0"/>
             <Button x:Name="btnLogin" Clicked="btnLogin_Clicked" Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black"/>
             <Button x:Name="btnSignUp" Clicked="btnSignUp_Clicked" Text="Sign Up" BackgroundColor="AntiqueWhite" TextColor="Black"/>
         </VerticalStackLayout>

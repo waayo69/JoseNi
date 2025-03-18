@@ -13,11 +13,22 @@
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="Sec" FontSize="32" HorizontalOptions="Center" TextColor="Gray" Margin="50,0,0,0"/>
         </HorizontalStackLayout>
-        <VerticalStackLayout>
-            <Label Text="No Filters" FontSize="32" HorizontalOptions="Center" TextColor="AntiqueWhite" BackgroundColor="Gray"/>
-            <Label Text="No Censorship" FontSize="32" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="AntiqueWhite"/>
-            <Label Text="Just Pure Internet Culture" FontSize="32" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="AntiqueWhite" />
-        </VerticalStackLayout>
+        <CarouselView x:Name="Cview" Loop="True" >
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>No Filters</x:String>
+                    <x:String>No Censorship</x:String>
+                    <x:String>Just Pure Internet Culture</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding}" FontSize="24" HorizontalOptions="Center" TextColor="Gray"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
         <VerticalStackLayout Padding="50" Spacing="5" Margin="0,140,0,0">
             <Entry x:Name="UserEmail" Placeholder="username" TextColor="AntiqueWhite"/>
             <Entry x:Name="passInput" Placeholder="passwordz" IsPassword="True" TextColor="AntiqueWhite"/>

@@ -3,6 +3,7 @@ using System.Timers;
 using Microsoft.Maui.Dispatching;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Dispatching;
+using System.Collections.ObjectModel;
 
 namespace JoseNi.MVVM.Views;
 
@@ -10,36 +11,60 @@ public partial class WelcomePage : ContentPage
 {
     private int _currentPosition = 0;
     private System.Timers.Timer _timer;
+    private System.Timers.Timer _scrollTimer;
+    private int _currentIndex = 0;
+    private int _totalItems = 0;
+
+    public ObservableCollection<string> Items { get; set; }
+
 
     public WelcomePage()
 	{
 		InitializeComponent();
         // Initialize Timer
 
-        // Delay execution until UI is fully loaded
-        this.Loaded += (s, e) => StartScrolling();
 
+        Items = new ObservableCollection<string>
+            {
+                "Breaking News: New feature added!",
+                "Welcome to UnderSec!",
+                "Secure your data with privacy tools!",
+                "Latest updates on cybersecurity!",
+                "Join our community today!"
+            };
+
+
+        BindingContext = this;
+        _totalItems = Items.Count;
+
+        StartAutoScroll();
     }
 
-    private void StartScrolling()
+    protected async override void OnAppearing()
     {
-        _timer = new System.Timers.Timer(2000); // 1 sec interval
-        _timer.Elapsed += (s, e) => MoveNext();
-        _timer.AutoReset = true;
-        _timer.Start();
-
+        base.OnAppearing();
+        await Task.Delay(100);
+        imgLoader.IsAnimationPlaying = true;
+    }
+    private void StartAutoScroll()
+    {
+        _scrollTimer = new System.Timers.Timer(2000); // Change speed here (2 sec per item)
+        _scrollTimer.Elapsed += (sender, e) => ScrollNext();
+        _scrollTimer.AutoReset = true;
+        _scrollTimer.Enabled = true;
     }
 
-    private void MoveNext()
+    private void ScrollNext()
     {
         MainThread.BeginInvokeOnMainThread(() =>
         {
-            if (Cview.ItemsSource is not null)
+            _currentIndex++;
+            if (_currentIndex >= _totalItems)
             {
-                int count = ((string[])Cview.ItemsSource).Length;
-                _currentPosition = (_currentPosition + 1) % count; // Loop back to 0
-                Cview.Position = _currentPosition;
+                _currentIndex = 0; // Loop back to first item
             }
+
+            marqueeCarousel.ScrollTo(_currentIndex, position: ScrollToPosition.Center, animate: true);
         });
     }
     private async void btnLogin_Clicked(object sender, EventArgs e)

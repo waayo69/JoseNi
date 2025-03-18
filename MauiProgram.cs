@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Hosting;
 using CommunityToolkit.Maui;
-
 
 namespace JoseNi
 {
@@ -12,6 +10,7 @@ namespace JoseNi
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit() // Initialize the Community Toolkit
                 .UseMauiCommunityToolkitMediaElement() // Initialize the Community Toolkit
                 .ConfigureFonts(fonts =>
                 {
