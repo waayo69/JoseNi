@@ -39,13 +39,6 @@ public partial class WelcomePage : ContentPage
 
         StartAutoScroll();
     }
-
-    protected async override void OnAppearing()
-    {
-        base.OnAppearing();
-        await Task.Delay(100);
-        imgLoader.IsAnimationPlaying = true;
-    }
     private void StartAutoScroll()
     {
         _scrollTimer = new System.Timers.Timer(2000); // Change speed here (2 sec per item)

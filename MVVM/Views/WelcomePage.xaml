@@ -6,13 +6,7 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="Black">
     <VerticalStackLayout>
-        <Image x:Name="imgLoader"
-               Source="cube.gif"
-               HeightRequest="150" 
-               WidthRequest="150"
-               HorizontalOptions="Center"
-               IsAnimationPlaying="True"/>
-        <Image Source="cube.gif" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0" IsAnimationPlaying="True"/>
+        <Image Source="cube.gif" WidthRequest="150" HeightRequest="150" Margin="0,100,0,50" IsAnimationPlaying="True"/>
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="    Under" FontSize="32" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="AntiqueWhite" Margin="0,0,70,0"/>
         </HorizontalStackLayout>

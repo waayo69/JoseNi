@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JoseNi.MVVM.Views.FlyoutMenuPage"
+             Title="FlyoutMenuPage">
+    <StackLayout BackgroundColor="#2C3E50" Padding="20">
+
+        <!-- Profile Picture in the Middle-Top -->
+        <Image Source="profile_picture.png"
+               WidthRequest="100"
+               HeightRequest="100"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Aspect="AspectFill"
+               Margin="0,20,0,20"/>
+
+        <!-- Navigation Buttons -->
+        <StackLayout>
+            <Button Text="Home" Command="{Binding NavigateCommand}" CommandParameter="HomePage"/>
+            <Button Text="Settings" Command="{Binding NavigateCommand}" CommandParameter="SettingsPage"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

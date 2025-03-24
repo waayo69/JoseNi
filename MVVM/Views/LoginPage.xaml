@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:JoseNi.MVVM.ViewModels"
              x:Class="JoseNi.MVVM.Views.LoginPage"
              BackgroundColor="Black"
              NavigationPage.HasNavigationBar="False"
              Title="LoginPage">
+    <ContentPage.BindingContext>
+        <vm:LoginPageClass/>
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Image Source="logo.png" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0"/>
         <HorizontalStackLayout HorizontalOptions="Center">
@@ -30,10 +34,10 @@
             </CarouselView.ItemTemplate>
         </CarouselView>
         <VerticalStackLayout Padding="50" Spacing="5" Margin="0,140,0,0">
-            <Entry x:Name="UserEmail" Placeholder="username" TextColor="AntiqueWhite"/>
-            <Entry x:Name="passInput" Placeholder="passwordz" IsPassword="True" TextColor="AntiqueWhite"/>
+            <Entry Placeholder="Username" Text="{Binding Username, Mode=TwoWay}" TextColor="AntiqueWhite"/>
+            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" TextColor="AntiqueWhite"/>
             <VerticalStackLayout Margin="0,25,0,0">
-                <Button x:Name="btnLoginFinal" Clicked="btnLoginFinal_Clicked" Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black"/>
+                <Button Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black" Command="{Binding LoginCommand}"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 

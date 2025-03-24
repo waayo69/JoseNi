@@ -2,22 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:media="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              NavigationPage.HasNavigationBar="False"
              Shell.NavBarIsVisible="False"
              x:Class="JoseNi.MVVM.Views.SplashPage"
              Title="SplashPage">
-    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <toolkit:MediaElement VerticalOptions="Center" HorizontalOptions="Center" 
-                              Source="C:\Users\Dream\Source\Repos\JoseNi\Resources\Raw\splash.mp4"
+    <Grid>
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <toolkit:MediaElement VerticalOptions="Center" HorizontalOptions="Center" 
+                              Source="C:\Users\Dream\Source\Repos\JoseNi\Resources\Raw\splashh.mp4"
                 x:Name="SplashVideo"
-                
                     ShouldAutoPlay="True"
                     Aspect="AspectFill"
                     ShouldShowPlaybackControls="False"
                     ShouldLoopPlayback="False"
                     MediaEnded="SplashVideo_MediaEnded"/>
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+
 
 
 

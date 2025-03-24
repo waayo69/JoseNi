@@ -22,7 +22,7 @@
                 <Entry x:Name="Lname" Placeholder="Last Name"/>
                 <Entry x:Name="regEmail" Placeholder="Email"/>
                 <Entry x:Name="regUserName" Placeholder="Username"/>
-
+                <Entry x:Name="regPass" Placeholder="Password" IsPassword="True"/>
                 <Button x:Name="btnCreateAcc" Clicked="btnCreateAcc_Clicked" Text="Register" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>
             </VerticalStackLayout>
 

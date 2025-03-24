@@ -17,12 +17,12 @@ public partial class SplashPage : ContentPage
     private void LoadEmbeddedVideo()
     {
         var assembly = Assembly.GetExecutingAssembly();
-        var resourceName = "JoseNi.Resources.Raw.qqqq.mp4";
+        var resourceName = "JoseNi.Resources.Raw.splashh.mp4";
         using(var stream= assembly.GetManifestResourceStream(resourceName))
         {
             if (stream != null)
             {
-                var filepath = Path.Combine(FileSystem.CacheDirectory, "qqqq.mp4");
+                var filepath = Path.Combine(FileSystem.CacheDirectory, "splashh.mp4");
                 using(var fileStream = File.Create(filepath))
                 {
                     stream.CopyTo(fileStream);
