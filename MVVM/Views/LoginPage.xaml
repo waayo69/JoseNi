@@ -6,18 +6,26 @@
              BackgroundColor="Black"
              NavigationPage.HasNavigationBar="False"
              Title="LoginPage">
+
+    <!-- Set the BindingContext to LoginPageClass ViewModel -->
     <ContentPage.BindingContext>
         <vm:LoginPageClass/>
     </ContentPage.BindingContext>
+
     <VerticalStackLayout>
+        <!-- App Logo -->
         <Image Source="logo.png" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0"/>
+
+        <!-- App Name (UnderSec) -->
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="    Under" FontSize="32" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="AntiqueWhite" Margin="0,0,70,0"/>
         </HorizontalStackLayout>
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="Sec" FontSize="32" HorizontalOptions="Center" TextColor="Gray" Margin="50,0,0,0"/>
         </HorizontalStackLayout>
-        <CarouselView x:Name="Cview" Loop="True" >
+
+        <!-- Carousel View for Slogans -->
+        <CarouselView x:Name="Cview" Loop="True">
             <CarouselView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>No Filters</x:String>
@@ -33,14 +41,30 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+
+        <!-- User Input Fields -->
         <VerticalStackLayout Padding="50" Spacing="5" Margin="0,140,0,0">
+            <!-- Username Entry Field -->
             <Entry Placeholder="Username" Text="{Binding Username, Mode=TwoWay}" TextColor="AntiqueWhite"/>
-            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" TextColor="AntiqueWhite"/>
+
+
+            <Grid>
+                <!-- Password Entry Field -->
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Password"
+                       IsPassword="{Binding IsPasswordHidden, Mode=TwoWay}"
+                       Text="{Binding Password, Mode=TwoWay}"
+                       TextColor="AntiqueWhite"
+                       WidthRequest="250"/>
+                <CheckBox IsChecked="{Binding IsPasswordHidden, Mode=TwoWay}" 
+                          VerticalOptions="Center" 
+                          HorizontalOptions="End"
+                          CheckedChanged="CheckBox_CheckedChanged"/>
+            </Grid>
+            <!-- Login Button -->
             <VerticalStackLayout Margin="0,25,0,0">
                 <Button Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black" Command="{Binding LoginCommand}"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
-
-
     </VerticalStackLayout>
 </ContentPage>

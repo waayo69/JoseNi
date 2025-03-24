@@ -11,21 +11,24 @@ namespace JoseNi.MVVM.ViewModels
 {
     public class Registration
     {
-        // Connection string to the database
+        // Connection string to the cloud database
         private string connectionString = @"Data Source=sql.bsite.net\MSSQL2016;Initial Catalog=waayo69_Clients;User ID=waayo69_Clients;Password=kris123asd;Encrypt=False; Connection Timeout=30";
+
         // Method to register a new user
         public string Register(string firstName, string lastName, string email, string username, string password)
         {
-            // Check if any fields are empty
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            // Validate that all input fields are filled
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) ||
+                string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 return "Please fill in all fields";
             }
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                // Check if username already exists
+                // Check if the username already exists in the database
                 string checkUserQuery = "SELECT COUNT(*) FROM JoseNi WHERE Username = @Username";
                 using (SqlCommand checkUserCmd = new SqlCommand(checkUserQuery, conn))
                 {
@@ -38,30 +41,23 @@ namespace JoseNi.MVVM.ViewModels
                     }
                 }
 
-                // Insert new user
+                // Insert a new user record into the database
                 string insertQuery = @"
                 INSERT INTO JoseNi (FirstName, LastName, Email, Username, Password) 
                 VALUES (@FirstName, @LastName, @Email, @Username, @Password)";
 
                 using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                 {
+                    // Add user details to the query parameters
                     insertCmd.Parameters.AddWithValue("@FirstName", firstName);
                     insertCmd.Parameters.AddWithValue("@LastName", lastName);
                     insertCmd.Parameters.AddWithValue("@Email", email);
                     insertCmd.Parameters.AddWithValue("@Username", username);
-                    insertCmd.Parameters.AddWithValue("@Password", password);
+                    insertCmd.Parameters.AddWithValue("@Password", password); // ⚠️ Consider hashing the password before storing
 
-                    // Execute the query
+                    // Execute the query and check if the registration was successful
                     int rowsAffected = insertCmd.ExecuteNonQuery();
-                    // Check if the registration was successful
-                    if (rowsAffected > 0)
-                    {
-                        return "Registration successful";
-                    }
-                    else
-                    {
-                        return "Registration failed";
-                    }
+                    return rowsAffected > 0 ? "Registration successful" : "Registration failed";
                 }
             }
         }

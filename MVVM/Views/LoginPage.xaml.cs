@@ -35,4 +35,9 @@ public partial class LoginPage : ContentPage
             }
         });
     }
+
+    private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        PasswordEntry.IsPassword = !e.Value;
+    }
 }

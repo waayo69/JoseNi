@@ -57,6 +57,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Platforms\Android\Resources\values\splash.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiAsset Remove="Resources\Raw\aaa.mp4" />
 	  <MauiAsset Remove="Resources\Raw\qqqq.mp4" />
 	  <MauiAsset Remove="Resources\Raw\splash.mp4" />
