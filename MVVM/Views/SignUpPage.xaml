@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              x:Class="JoseNi.MVVM.Views.SignUpPage"
              BackgroundColor="Black"
              NavigationPage.HasNavigationBar="False"
@@ -21,6 +22,7 @@
                 <Entry x:Name="Fname" Placeholder="First Name" Margin="0,0,0,0"/>
                 <Entry x:Name="Lname" Placeholder="Last Name"/>
                 <Entry x:Name="age" Placeholder="Age"/>
+                <DatePicker x:Name="dobPicker" Format="yyyy-MM-dd" MinimumDate="1900-01-01" MaximumDate="{x:Static sys:DateTime.Now}"/>
                 <Entry x:Name="gender" Placeholder="Gender"/>
                 <Button x:Name="btnNext" Clicked="btnNext_Clicked" Text="Next" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>
             </VerticalStackLayout>
