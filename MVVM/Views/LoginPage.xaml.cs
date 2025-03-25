@@ -4,7 +4,6 @@ namespace JoseNi.MVVM.Views;
 
 public partial class LoginPage : ContentPage
 {
-    private string connectionString = @"Data Source=sql.bsite.net\MSSQL2016;Initial Catalog=waayo69_Clients;User ID=waayo69_Clients;Password=kris123asd;Encrypt=False; Connection Timeout=30";
     private int _currentPosition = 0;
     private System.Timers.Timer _timer;
     public LoginPage()
