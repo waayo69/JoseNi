@@ -33,9 +33,9 @@
 
 
 
-            <Entry x:Name="Username" Text="{Binding Username}" TextColor="Black" Margin="0,100,0,0"/>
-                <Entry x:Name="Password" Text="{Binding Password}" TextColor="Black"/>
-            <Button Text="Sign Up" Command="{Binding LoginCommand}" BackgroundColor="AntiqueWhite" TextColor="Black"/>
+            <Entry x:Name="Username" Text="{Binding Username}" TextColor="White" Margin="0,100,0,0"/>
+                <Entry x:Name="Password" Text="{Binding Password}" TextColor="White"/>
+            <Button Text="Login" Command="{Binding LoginCommand}" BackgroundColor="AntiqueWhite" TextColor="Black"/>
         </VerticalStackLayout>
 
 
