@@ -2,10 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             xmlns:viewModels="clr-namespace:JoseNi.MVVM.ViewModels"
              x:Class="JoseNi.MVVM.Views.SignUpPage"
              BackgroundColor="Black"
              NavigationPage.HasNavigationBar="False"
              Title="SignUpPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:SignUpViewModel/>
+    </ContentPage.BindingContext>
+
+
     <VerticalStackLayout>
         <VerticalStackLayout>
             <Image Source="logo.png" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0"/>
@@ -18,15 +25,18 @@
                 <Label Text="Sec" FontSize="32" HorizontalOptions="Center" TextColor="Gray" Margin="50,0,0,0"/>
             </HorizontalStackLayout>
 
-            <VerticalStackLayout Padding="50" Spacing="0">
-                <Entry x:Name="Fname" Placeholder="First Name" Margin="0,0,0,0"/>
-                <Entry x:Name="Lname" Placeholder="Last Name"/>
-                <Entry x:Name="age" Placeholder="Age"/>
-                <DatePicker x:Name="dobPicker" Format="yyyy-MM-dd" MinimumDate="1900-01-01" MaximumDate="{x:Static sys:DateTime.Now}"/>
-                <Entry x:Name="gender" Placeholder="Gender"/>
-                <Button x:Name="btnNext" Clicked="btnNext_Clicked" Text="Next" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>
-            </VerticalStackLayout>
+            <VerticalStackLayout Padding="50">
+        <Entry Placeholder="First Name" Text="{Binding CurrentUser.FirstName}" />
+        <Entry Placeholder="Last Name" Text="{Binding CurrentUser.LastName}" />
+        <Entry Placeholder="Email" Text="{Binding CurrentUser.Email}" />
+        <Entry Placeholder="Username" Text="{Binding CurrentUser.Username}" />
+        <Entry Placeholder="Password" Text="{Binding CurrentUser.Password}" IsPassword="True" />
 
+        <DatePicker Format="yyyy-MM-dd" Date="{Binding CurrentUser.DateOfBirth}" />
+        <Picker Title="Select Gender" ItemsSource="{Binding GenderOptions}" SelectedItem="{Binding CurrentUser.Gender}" />
+
+        <Button Text="Sign Up" BackgroundColor="AntiqueWhite" TextColor="Black" Command="{Binding SignUpCommand}" />
+    </VerticalStackLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

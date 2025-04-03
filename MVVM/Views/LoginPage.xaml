@@ -44,12 +44,9 @@
 
         <!-- User Input Fields -->
         <VerticalStackLayout Padding="50" Spacing="5" Margin="0,140,0,0">
-            <!-- Username Entry Field -->
             <Entry Placeholder="Username" Text="{Binding Username, Mode=TwoWay}" TextColor="AntiqueWhite"/>
 
-
             <Grid>
-                <!-- Password Entry Field -->
                 <Entry x:Name="PasswordEntry"
                        Placeholder="Password"
                        IsPassword="{Binding IsPasswordHidden, Mode=TwoWay}"
@@ -58,13 +55,10 @@
                        WidthRequest="250"/>
                 <CheckBox IsChecked="{Binding IsPasswordHidden, Mode=TwoWay}" 
                           VerticalOptions="Center" 
-                          HorizontalOptions="End"
-                          CheckedChanged="CheckBox_CheckedChanged"/>
+                          HorizontalOptions="End"/>
             </Grid>
-            <!-- Login Button -->
-            <VerticalStackLayout Margin="0,25,0,0">
-                <Button Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black" Command="{Binding LoginCommand}"/>
-            </VerticalStackLayout>
+            <Button Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black" Command="{Binding LoginCommand}"/>
+            <Button Text="Loginn" Clicked="Button_Clicked" BackgroundColor="AntiqueWhite" TextColor="Black"/>
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
