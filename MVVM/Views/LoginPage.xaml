@@ -30,11 +30,12 @@
             </CarouselView.ItemTemplate>
         </CarouselView>
         <VerticalStackLayout Padding="50" Spacing="5" Margin="0,140,0,0">
-            <Entry x:Name="UserEmail" Placeholder="username" TextColor="AntiqueWhite"/>
-            <Entry x:Name="passInput" Placeholder="passwordz" IsPassword="True" TextColor="AntiqueWhite"/>
-            <VerticalStackLayout Margin="0,25,0,0">
-                <Button x:Name="btnLoginFinal" Clicked="btnLoginFinal_Clicked" Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black"/>
-            </VerticalStackLayout>
+
+
+
+            <Entry x:Name="Username" Text="{Binding Username}" TextColor="Black" Margin="0,100,0,0"/>
+                <Entry x:Name="Password" Text="{Binding Password}" TextColor="Black"/>
+            <Button Text="Sign Up" Command="{Binding LoginCommand}" BackgroundColor="AntiqueWhite" TextColor="Black"/>
         </VerticalStackLayout>
 
 

@@ -18,12 +18,19 @@
             </HorizontalStackLayout>
 
             <VerticalStackLayout Padding="50" Spacing="0">
-                <Entry x:Name="Fname" Placeholder="First Name" Margin="0,0,0,0"/>
+                <!--<Entry x:Name="Fname" Placeholder="First Name" Margin="0,0,0,0"/>
                 <Entry x:Name="Lname" Placeholder="Last Name"/>
                 <Entry x:Name="regEmail" Placeholder="Email"/>
                 <Entry x:Name="regUserName" Placeholder="Username"/>
 
-                <Button x:Name="btnCreateAcc" Clicked="btnCreateAcc_Clicked" Text="Register" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>
+                <Button x:Name="btnCreateAcc" Clicked="btnCreateAcc_Clicked" Text="Register" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>-->
+
+                <Entry x:Name="Username" Text="{Binding Username}" TextColor="Black" Margin="0,100,0,0"/>
+                <Entry x:Name="Password" Text="{Binding Password}" TextColor="Black"/>
+                <Entry x:Name="Confirm Password" Text="{Binding ConfirmPassword}" TextColor="Black"/>
+                <Button Text="Sign Up" Command="{Binding RegisterCommand}" BackgroundColor="AntiqueWhite" TextColor="Black"/>
+               
+
             </VerticalStackLayout>
 
         </VerticalStackLayout>
