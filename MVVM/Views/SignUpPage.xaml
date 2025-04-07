@@ -2,10 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             xmlns:local="clr-namespace:JoseNi.MVVM.ViewModels"
              x:Class="JoseNi.MVVM.Views.SignUpPage"
              BackgroundColor="Black"
              NavigationPage.HasNavigationBar="False"
              Title="SignUpPage">
+
+    <ContentPage.BindingContext>
+        <local:AccountViewModel/>
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
         <VerticalStackLayout>
             <Image Source="logo.png" WidthRequest="150" HeightRequest="150" Margin="0,100,0,0"/>
@@ -19,12 +24,12 @@
             </HorizontalStackLayout>
 
             <VerticalStackLayout Padding="50" Spacing="0">
-                <Entry x:Name="Fname" Placeholder="First Name" Margin="0,0,0,0"/>
-                <Entry x:Name="Lname" Placeholder="Last Name"/>
-                <Entry x:Name="age" Placeholder="Age"/>
-                <DatePicker x:Name="dobPicker" Format="yyyy-MM-dd" MinimumDate="1900-01-01" MaximumDate="{x:Static sys:DateTime.Now}"/>
-                <Entry x:Name="gender" Placeholder="Gender"/>
-                <Button x:Name="btnNext" Clicked="btnNext_Clicked" Text="Next" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>
+                <Entry x:Name="Fname" Text="{Binding FName}" Placeholder="First Name" Margin="0,0,0,0"/>
+                <Entry x:Name="Lname" Text="{Binding LName}" Placeholder="Last Name"/>
+                <Entry x:Name="age" Text="{Binding Age}" Placeholder="Age"/>
+                <DatePicker x:Name="dobPicker"  Format="yyyy-MM-dd" MinimumDate="1900-01-01" Date="{Binding DoB}" MaximumDate="{x:Static sys:DateTime.Now}"/>
+                <Entry x:Name="gender" Text="{Binding Gender}" Placeholder="Gender"/>
+                <Button x:Name="btnNext" Command="{Binding ContinueButton}"  Text="Next" BackgroundColor="AntiqueWhite" TextColor="Black" Margin="0,100,0,0"/>
             </VerticalStackLayout>
 
         </VerticalStackLayout>

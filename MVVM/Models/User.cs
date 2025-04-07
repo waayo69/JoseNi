@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace JoseNi.MVVM.Models
 {
-    public class Accounts
+    public class User
     {
-        // Model class representing user account details for registration
-
         // Stores the first name of the user
         public string FirstName { get; set; }
 
@@ -18,6 +16,9 @@ namespace JoseNi.MVVM.Models
 
         // Stores the email address of the user
         public string Email { get; set; }
+        public DateTime DoB {  get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
 
         // Stores the chosen username of the user
         public string Username { get; set; }

@@ -57,14 +57,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidResource Remove="Platforms\Android\Resources\values\splash.xml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiAsset Remove="Resources\Raw\aaa.mp4" />
 	  <MauiAsset Remove="Resources\Raw\qqqq.mp4" />
 	  <MauiAsset Remove="Resources\Raw\splash.mp4" />
 	  <MauiAsset Remove="Resources\Raw\splashh.mp4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Platforms\Android\Resources\values\splash.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,11 +81,13 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Core" Version="8.0.0" />
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.0.0" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.100" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
+		<PackageReference Include="System.Security.SecureString" Version="4.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>

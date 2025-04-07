@@ -9,34 +9,34 @@ public partial class LoginPage : ContentPage
     public LoginPage()
 	{
 		InitializeComponent();
-        // Delay execution until UI is fully loaded
-        BindingContext = new ViewModels.LoginPageClass();
-        this.Loaded += (s, e) => StartScrolling();
+        //// Delay execution until UI is fully loaded
+        //BindingContext = new ViewModels.LoginPageClass();
+        //this.Loaded += (s, e) => StartScrolling();
     }
-    private void StartScrolling()
-    {
-        _timer = new System.Timers.Timer(2000); // 1 sec interval
-        _timer.Elapsed += (s, e) => MoveNext();
-        _timer.AutoReset = true;
-        _timer.Start();
+    //private void StartScrolling()
+    //{
+    //    _timer = new System.Timers.Timer(2000); // 1 sec interval
+    //    _timer.Elapsed += (s, e) => MoveNext();
+    //    _timer.AutoReset = true;
+    //    _timer.Start();
 
-    }
+    //}
 
-    private void MoveNext()
-    {
-        MainThread.BeginInvokeOnMainThread(() =>
-        {
-            if (Cview.ItemsSource is not null)
-            {
-                int count = ((string[])Cview.ItemsSource).Length;
-                _currentPosition = (_currentPosition + 1) % count; // Loop back to 0
-                Cview.Position = _currentPosition;
-            }
-        });
-    }
+    //private void MoveNext()
+    //{
+    //    MainThread.BeginInvokeOnMainThread(() =>
+    //    {
+    //        if (Cview.ItemsSource is not null)
+    //        {
+    //            int count = ((string[])Cview.ItemsSource).Length;
+    //            _currentPosition = (_currentPosition + 1) % count; // Loop back to 0
+    //            Cview.Position = _currentPosition;
+    //        }
+    //    });
+    //}
 
     private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        PasswordEntry.IsPassword = !e.Value;
+        //PasswordEntry.IsPassword = !e.Value;
     }
 }

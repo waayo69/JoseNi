@@ -17,7 +17,7 @@ public partial class SplashPage : ContentPage
     private void LoadEmbeddedVideo()
     {
         var assembly = Assembly.GetExecutingAssembly();
-        var resourceName = "JoseNi.Resources.Raw.splashh.mp4";
+        var resourceName = "JoseNi.Resources.raw.splashh.mp4";
         using(var stream= assembly.GetManifestResourceStream(resourceName))
         {
             if (stream != null)

@@ -9,7 +9,7 @@
 
     <!-- Set the BindingContext to LoginPageClass ViewModel -->
     <ContentPage.BindingContext>
-        <vm:LoginPageClass/>
+        <vm:AccountViewModel/>
     </ContentPage.BindingContext>
 
     <VerticalStackLayout>
@@ -63,7 +63,7 @@
             </Grid>
             <!-- Login Button -->
             <VerticalStackLayout Margin="0,25,0,0">
-                <Button Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black" Command="{Binding LoginCommand}"/>
+                <Button Text="Login" BackgroundColor="AntiqueWhite" TextColor="Black" Command="{Binding LoginButton}"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>
